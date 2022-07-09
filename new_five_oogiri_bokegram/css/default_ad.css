@@ -1,0 +1,51 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+/* ヘッダー */
+
+#fixed-header{
+	background:#3e3e3e;
+}
+
+#fh-title a:hover,
+.fh-menu li a:hover{
+	color:#000;
+}
+
+
+
+h1 span{
+	color:#fff;
+	font-weight:normal;
+	font-size: 80%;
+}
+
+button.logout {
+	font-size: 15px;
+	height:44px;
+	padding: 5px auto;
+	background-color: #595959;
+	color: #fff;
+	border-style: none;
+	padding:0 15px;
+}
+
+button.logout:hover {
+	background-color: #2a2a2a;
+	color: #fff;
+}
+
+/* その他 */
+
+dl.postform{
+	border-top:none;
+}
+
+/* スマホだけに適用するCSS */
+@media screen and (max-width:479px)
+{
+	h1 span{
+		font-size:9px;
+	}
+}

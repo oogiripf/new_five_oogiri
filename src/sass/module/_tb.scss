@@ -1,0 +1,57 @@
+@include mq( sp-tb ) { // for tablet & smart phone
+    #wrapper {
+        font-size: 80%;
+    }
+
+    .cv {
+        &--fix {
+            .cvButton {
+                width: auto;
+                margin: 0 0 0 auto;
+                &__elm {
+                    height: 50px;
+                    width: 100%;
+                    padding: 8px;
+                    font-size: 1em;
+                    &::before {
+                        width: 24px;
+                        height: 20px;
+                        margin-right: 8px;
+                    }
+                }
+                &__icon {
+                    margin-left: 5px;
+                }
+                &__icon {
+                    width: 33px;
+                    margin-left: 8px;
+                    img {
+                        width: 100%;
+                        vertical-align: bottom;
+                    }
+                }
+            }
+            &__layout {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        &__title {
+            font-size: 1.1em;
+            font-weight: bold;
+            text-align: left;
+
+        }
+    }
+
+    #cv-btn {
+        padding: 15px 0 15px;
+    }
+
+};
+
+@include mq( tb ) {
+
+
+}

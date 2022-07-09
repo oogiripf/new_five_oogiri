@@ -1,0 +1,606 @@
+@keyframes my-fade-left {
+    from {
+        opacity: 0;
+        transform: translateX(-150px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes my-fade-right {
+    from {
+        opacity: 0;
+        transform: translateX(-250px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes my-in-left {
+    from {
+        opacity: 0;
+        transform: translateX(-150px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    transition-duration: 500ms;
+    transition-property: opacity, transform;
+}
+
+.fade-in-up {
+    transform: translate(0, 50px);
+}
+
+.fade-in-down {
+    transform: translate(0, -50px);
+}
+
+.fade-in-left {
+    transform: translate(-50px, 0);
+}
+
+.fade-in-right {
+    transform: translate(50px, 0);
+}
+
+.scroll-in {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.first {
+    &-flex {
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &-img {
+            width: 208px;
+            min-height: 329px;
+            background-image: url(../img/five-logo.png);
+            background-size: contain;
+            opacity: 0;
+            &.animation {
+                animation-name: my-fade-left;
+                animation-duration: 0.8s;
+                animation-delay: 2.5s;
+                animation-fill-mode: forwards;
+            }
+        }
+    }
+}
+.button008 {
+    position: absolute;
+    top: 3%;
+    left: 3%;
+    display: flex;
+    width: 80%;
+    &-text {
+        font-size: 25px;
+    }
+    &-size {
+        font-size: 45px;
+        line-height: 0;
+    }
+}
+.button008 a {
+    z-index: 30;
+    border: #fff 3px solid;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 30%;
+    padding: 2em 0;
+    background: #000;
+    transition: 0.3s ease-in-out;
+    font-size: 1.6rem;
+    font-weight: 500;
+    z-index: 0;
+}
+
+.button008 a p {
+    font-family: " ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "Sawarabi Mincho", "HG明朝E", "ＭＳ Ｐ明朝",
+        "ＭＳ 明朝", "serif";
+    color: #fff;
+}
+
+.button008 a:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    display: block;
+    background: rgb(4, 12, 159);
+    transition: 0.3s;
+    left: 0;
+}
+
+// .button008 a:hover p{
+//     color: #fff;
+// }
+.button008 a:hover:before {
+    width: 100%;
+    z-index: -1;
+}
+
+.sec-second {
+    h1 {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        font-family: "Montserrat", Arial, sans-serif;
+        font-size: calc(10rem + 5vw);
+        font-weight: 700;
+        color: #fff;
+        letter-spacing: 0.02em;
+        // text-transform: uppercase;
+        // text-shadow: 0 0 0.15em #1da9cc;
+        user-select: none;
+        white-space: nowrap;
+        filter: blur(0.007em);
+        animation: shake 12s linear forwards;
+        animation-iteration-count: infinite;
+    }
+
+    h1 span {
+        position: absolute;
+        top: 0;
+        left: 1%;
+        transform: translate(-50%, -50%);
+        color: #000;
+        font-size: 3em;
+        // -webkit-clip-path: polygon(10% 0%, 44% 0%, 70% 100%, 55% 100%);
+        // clip-path: polygon(10% 0%, 44% 0%, 70% 100%, 55% 100%);
+    }
+
+    h1::before,
+    h1::after {
+        // content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    h1::before {
+        animation: crack1 2.5s linear forwards;
+        -webkit-clip-path: polygon(0% 0%, 10% 0%, 55% 100%, 0% 100%);
+        clip-path: polygon(0% 0%, 10% 0%, 55% 100%, 0% 100%);
+    }
+
+    h1::after {
+        animation: crack2 2.5s linear forwards;
+        -webkit-clip-path: polygon(44% 0%, 100% 0%, 100% 100%, 70% 100%);
+        clip-path: polygon(44% 0%, 100% 0%, 100% 100%, 70% 100%);
+    }
+
+    @keyframes shake {
+        5%,
+        15%,
+        25%,
+        35%,
+        55%,
+        65%,
+        75%,
+        95% {
+            filter: blur(0.018em);
+            transform: translateY(0.018em) rotate(0deg);
+        }
+
+        10%,
+        30%,
+        40%,
+        50%,
+        70%,
+        80%,
+        90% {
+            filter: blur(0.01em);
+            transform: translateY(-0.018em) rotate(0deg);
+        }
+
+        20%,
+        60% {
+            filter: blur(0.03em);
+            transform: translate(-0.018em, 0.018em) rotate(0deg);
+        }
+
+        45%,
+        85% {
+            filter: blur(0.03em);
+            transform: translate(0.018em, -0.018em) rotate(0deg);
+        }
+
+        95% {
+            filter: blur(0.007em);
+            transform: translate(0) rotate(-0.5deg);
+        }
+
+        100% {
+            filter: blur(0.009em);
+            transform: translate(0) rotate(0deg);
+        }
+    }
+
+    @keyframes crack1 {
+        0%,
+        95% {
+            transform: translate(-50%, -50%);
+        }
+
+        100% {
+            transform: translate(-51%, -48%);
+        }
+    }
+
+    @keyframes crack2 {
+        0%,
+        95% {
+            transform: translate(-50%, -50%);
+        }
+
+        100% {
+            transform: translate(-49%, -53%);
+        }
+    }
+    &.swiper-slide.vertical-slider__slide {
+        position: relative;
+        display: block;
+    }
+    .trapezoid_left {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        padding: 5% 6%;
+        font-family: " ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "Sawarabi Mincho", "HG明朝E", "ＭＳ Ｐ明朝",
+            "ＭＳ 明朝", "serif";
+        &-title {
+            font-size: 4rem;
+            font-weight: 600;
+        }
+        &-text {
+            margin-top: 6rem;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+    }
+    .trapezoid_right {
+        width: 50%;
+        height: auto;
+        margin: 0 0 0 auto;
+        border-top: 100vh solid #000;
+        border-left: 150px solid transparent;
+        &.is-animated {
+            animation-name: my-fade-right;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+        }
+        &-contents {
+            z-index: 30;
+            position: absolute;
+            top: 40%;
+            right: 0;
+            transform: translateY(-50%);
+            width: 30%;
+            padding: 0 10% 0 0;
+            font-family: " ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "Sawarabi Mincho", "HG明朝E",
+                "ＭＳ Ｐ明朝", "ＭＳ 明朝", "serif";
+            text-align: right;
+        }
+        &-title {
+            width: 100%;
+            color: #fff;
+            font-size: 4rem;
+            text-align: left;
+        }
+        &-text {
+            width: 100%;
+            margin-top: 4rem;
+            color: #fff;
+            font-size: 2rem;
+            text-align: left;
+        }
+    }
+    &-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 5em;
+        color: #000;
+    }
+    .button008 {
+        position: absolute;
+        top: auto;
+        bottom: 20%;
+        left: 5%;
+        display: flex;
+        width: 80%;
+        &-text {
+            font-size: 25px;
+        }
+        &-size {
+            font-size: 45px;
+            line-height: 0;
+        }
+    }
+    .button008 a {
+        z-index: 30;
+        position: relative;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 30%;
+        padding: 2em 0;
+        background: #000;
+        transition: 0.3s ease-in-out;
+        font-size: 1.6rem;
+        font-weight: 500;
+        z-index: 0;
+        &.button_02 {
+            border: none;
+        }
+    }
+
+    .button008 a p {
+        font-family: " ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "Sawarabi Mincho", "HG明朝E", "ＭＳ Ｐ明朝",
+            "ＭＳ 明朝", "serif";
+        color: #fff;
+    }
+
+    .button008 a:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 0;
+        display: block;
+        background: rgb(4, 12, 159);
+        transition: 0.3s;
+        left: 0;
+    }
+
+    // .button008 a:hover p{
+    //     color: #fff;
+    // }
+    .button008 a:hover:before {
+        width: 100%;
+        z-index: -1;
+    }
+}
+
+.sec-third {
+    p {
+        padding: 10px;
+    }
+    #third-wrap {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        overflow: hidden;
+        background: #000;
+    }
+    #third-wrap canvas {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 1000px;
+        height: 1000px;
+        margin: -500px 0 0 -500px;
+        -outline: 1px solid #fff;
+    }
+    .third-wrap-flex {
+        &-vertical {
+            z-index: 100;
+            position: relative;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+        }
+        &-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &.third-content{
+                color: #fff;
+                // text-align: center;
+            }
+        }
+    }
+    #container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .border {
+        text-align: right;
+        font-size: 18px;
+    }
+
+    .border {
+        &.top {
+            &:before {
+                content: "";
+                position: absolute;
+                left: 100%;
+                top: 0;
+                width: 0;
+                transform: translateX(-100%);
+                border-bottom: solid 50px #000;
+                animation: border_anim_top 1.25s linear infinite forwards;
+            }
+
+            @keyframes border_anim_top {
+                0% {
+                    width: 0%;
+                }
+                100% {
+                    width: 100%;
+                }
+            }
+        }
+        &.right {
+            &:before {
+                content: "";
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 0;
+                border-right: solid 50px #000;
+                animation: border_anim_right 1.25s linear infinite forwards;
+            }
+
+            @keyframes border_anim_right {
+                0% {
+                    height: 0%;
+                }
+                100% {
+                    height: 100%;
+                }
+            }
+        }
+        &.bottom {
+            &:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 0;
+                border-bottom: solid 50px #000;
+                animation: border_anim_top 1.25s linear infinite forwards;
+            }
+
+            @keyframes border_anim_bottom {
+                0% {
+                    width: 0%;
+                }
+                100% {
+                    width: 100%;
+                }
+            }
+        }
+        &.left {
+            &:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 0;
+                margin-left: -1px;
+                border-right: solid 50px #000;
+                animation: border_anim_left 1.25s linear infinite forwards;
+            }
+
+            @keyframes border_anim_left {
+                0% {
+                    height: 0%;
+                }
+                100% {
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+    .third-triangle {
+        z-index: -1;
+        width: 100%;
+        height: auto;
+        &.top {
+            position: absolute;
+            left: 0;
+            top: 0;
+            /*2色パターン*/
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 60vh 75vw 0 0;
+            border-color: rgb(4, 12, 159) transparent transparent transparent;
+        }
+        &.right {
+            position: absolute;
+            right: 0;
+            top: 0;
+            /*2色パターン*/
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 75vw 60vh 0;
+            border-color: transparent rgb(4, 12, 159) transparent transparent;
+        }
+        &.bottom {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            /*2色パターン*/
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 60vh 0 0 75vw;
+            border-color: transparent transparent transparent rgb(4, 12, 159);
+        }
+        &.left {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            /*2色パターン*/
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 0 60vh 75vw;
+            border-color: transparent transparent rgb(4, 12, 159) transparent;
+        }
+        &.active {
+            animation-name: my-in-left;
+            animation-duration: 1s;
+            animation-delay: 1.2s;
+            animation-fill-mode: forwards;
+        }
+    }
+}
+.fifth-sec {
+    position: relative;
+    width: 100%;
+    height: auto;
+    &-wrap {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 100px 0;
+    }
+    &-link {
+        position: absolute;
+        top: 10%;
+        left: 5%;
+        font-size: 4rem;
+        font-family: $font-new;
+    }
+    &-contents {
+        display: flex;
+        justify-content: center;
+        width: 25%;
+        font-family: $font-new;
+    }
+    &-title {
+        font-size: 2.3rem;
+    }
+}

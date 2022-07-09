@@ -1,0 +1,100 @@
+$fs: 100%;
+
+// フォント設定
+$font-def: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', '游ゴシック Medium', meiryo, sans-serif;
+$font-def2: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', '游ゴシック Medium', 'Yu Gothic Medium', '游ゴシック体', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+$font-def3: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic';
+$font-n: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', '游ゴシック Medium', 'Yu Gothic Medium', '游ゴシック体', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+$font-go: '游ゴシック Medium', 'Yu Gothic Medium', '游ゴシック体',　YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+$font-new: " ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "Sawarabi Mincho", "HG明朝E", "ＭＳ Ｐ明朝",
+"ＭＳ 明朝", "serif";
+
+// カラー設定
+$black: #222;
+$gray: #c3c3c3;
+$silver: #e8e8e8;
+$white: #FFF;
+$blue: #00ABEB;
+$dark-blue: #0048ad;
+$my-blue: #0e67db;
+$pink: #FF0057;
+$yellow: #ffee00;
+$beige: #ffeacb;
+$orange: #FFB656;
+$green: #B9F07D;
+$dark: #3f3f3f;
+$sky: #a1d3ff;
+$sky2: #cbf1ff;
+
+$header-height: 50px; //headerの高さ
+$scroll-width: 40px; //headerの横幅
+
+%origImg {
+    width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+%contentWidth {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+%sec-title {
+    text-align: center;
+    padding: 1.5em 0;
+    font-size: 2em;
+}
+
+%btn {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    padding: 1.5em 2.5em;
+    color: $white;
+    font-size: 1.5em;
+    font-weight: 900;
+    text-shadow: 0 3px 0 rgba( $black, .16 );
+    background-color: $orange;
+    box-shadow: 0 5px 0 rgba( $dark-blue, 1 );
+    &-default {
+        display: inline-block;
+        position: relative;
+        width: 16em;
+        text-align: center;
+        padding: 1em 1.5em;
+        color: $white;
+        font-size: 1em;
+        font-weight: bold;
+        text-shadow: 0 3px 0 rgba( $black, .16 );
+        background-color: $orange;
+        box-shadow: 0 5px 0 rgba( $dark-blue, 1 );
+        @include mq( sp ) {
+            text-shadow: 0 1px 0 rgba( $black, .16 );
+        }
+    }
+    @include mq( sp ) {
+        min-width: 75%;
+        padding: 1.5em;
+        text-shadow: 0 1px 0 rgba( $black, .16 );
+    }
+}
+
+%fukidashi {
+    display: block;
+    position: absolute;
+    top: -85%;
+    right: -25%;
+    z-index: 1;
+    padding: 1em;
+    text-shadow: none;
+    font-family: 'Mushin';
+    font-size: 1.5em;
+    font-weight: 500;
+    color: $dark-blue;
+    background-size: contain;
+    @include mq( sp ) {
+        top: -65%;
+        right: -5%;
+    }
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>大喜利ファイブ</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <!-- CDN読み込み -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- 自作読み込み -->
+    <link rel="stylesheet" href="./asset/css/style.css?ver=1.2.0" type="text/css">
+</head>
+
+<body id="top">
+    <header id="fixed">
+        <%- include('./partial/header'); %>
+    </header>
+    <div class="swiper-container vertical-slider">
+        <div class="swiper-wrapper vertical-slider__wrapper">
+            <!-- <%- include('./partial/section01'); %> -->
+                <%- include('./partial/section02'); %>
+                    <%- include('./partial/section03'); %>
+                        <%- include('./partial/section04'); %>
+                            <%- include('./partial/section05'); %>
+        </div>
+        <div class="swiper-pagination vertical-slider__pagination"></div>
+    </div>
+    <div id="load"></div>
+
+    <!-- CDN読み込み -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r77/three.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
+
+    <script src="./asset/js/vender.js"></script>
+    <script src="./asset/js/main.js"></script>
+
+
+</body>
+
+</html>

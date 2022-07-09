@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css?family=M+PLUS+1p");
+@import url("https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap");
+
+html {
+	width: 100%;
+	// height: 100%;
+	font-size: 62.5%;
+}
+
+body {
+	position: relative;
+	z-index: 0;
+	width: 100%;
+	// height: 100%;
+	min-height: 100%;
+	font-family: $font-n;
+	font-size: 1.6rem;
+	// font-weight: 500; // '游ゴシック'のみを設定時には必須
+	background-size: cover;
+}
+
+#fixed {
+	z-index: 999;
+	position: fixed;
+	/*基準を画面の左上に*/
+	top: 0;
+	left: 0;
+	/*余白が入らないように*/
+	margin: 0;
+	/*以下装飾*/
+	width: 100%;
+	height: $header-height;
+	background: #333;
+	color: white;
+}
+
+.mainHeader__body {
+	display: flex;
+	.header-logo {
+		width: 100%;
+		height: 50px;
+		.mainHeader__logo {
+			display: inline-block;
+			width: 30%;
+			height: 50px;
+			margin-left: 5px;
+			background-image: url(../img/five-logo.png);
+			background-size: contain;
+		}
+	}
+	.right {
+		display: flex;
+		width: 90%;
+		justify-content: flex-end;
+		.header-link {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 24%;
+			height: 50px;
+			font-weight: 600;
+			&:hover {
+				background: rgb(4, 12, 159);
+			}
+			&:last-child {
+				margin-right: 40px;
+			}
+			.header-title {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+				height: 50px;
+				font-size: 1.6rem;
+				color: #fff;
+			}
+		}
+	}
+}
+
+* {
+	background-size: cover;
+	-webkit-appearance: none;
+	line-height: 1.618;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: #333;
+}
+
+a {
+	color: #3099ff;
+	text-decoration: none;
+}

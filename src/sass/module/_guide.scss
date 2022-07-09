@@ -1,0 +1,105 @@
+// Variables
+// ---------------------------------------------------
+$zindex-guide: 2000; //ガイドを表示するz-indexレイヤー
+
+//breakpoints
+$breakpoint-md:  640px !default; //この数値以上で md 表示
+$breakpoint-lg:  980px !default; //この数値以上で lg 表示
+
+//gridsystem
+$col-num:        12   !default; //12カラム
+$col-width:      60px !default; //1カラムの幅
+$col-gutter:     10px !default; //カラム同士のアキ
+$col-gutter-sm:   5px !default; //カラム同士のアキ mobile
+
+$container-width:  $col-num * ($col-width + ($col-gutter*2)); // 960px
+$container-gutter:    10px !default; //ウィンドウ全体の左右アキ
+$container-gutter-sm: 20px !default; //ウィンドウ全体の左右アキ(スマホ)
+// Mixins
+// ---------------------------------------------------
+
+//mediaquery
+@mixin mediaquery-md() {
+  @media (min-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin mediaquery-lg() {
+  @media (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+//guide
+@mixin responsive-guide() {
+
+  &::before,
+  &::after {
+    pointer-events: none;
+    display: block;
+    position: fixed;
+    height: 150%;  //100%だと iOS Safariで下端途切れるので
+    top: 0;
+    left: 50%;
+    content: "";
+    z-index: $zindex-guide;
+  }
+
+  //中心線
+  &::before {
+    width: 1px;
+    background-color: hotpink;
+    @include mediaquery-md() { background-color: lime; }
+    @include mediaquery-lg() { background-color: cyan; }
+  }
+
+  //左右端ガイド
+  &::after {
+    outline: hotpink 1px solid;
+    width: calc( 100% - (#{$container-gutter-sm}*2) - (#{$col-gutter-sm}*2) );
+    margin-left: calc(-50% + #{$container-gutter-sm} + #{$col-gutter-sm});
+
+    @include mediaquery-md() {
+      outline-color: lime;
+      width: calc( 100% - (#{$container-gutter}*2) - (#{$col-gutter}*2) );
+      margin-left: calc( -50% + #{$container-gutter} + #{$col-gutter});
+    }
+    @include mediaquery-lg() {
+      outline-color: cyan;
+      width: $container-width - ($container-gutter * 2);
+      margin-left: ($container-width - $col-gutter*2) / -2;
+    }
+  }
+
+  //インジケータ (正直なくても困らない)
+  body::before {
+    z-index: $zindex-guide + 1;
+    color: white;
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 5px;
+    font-size: 9px;
+    content: "sm (mobile)";
+    background: #CE3D74;
+
+    @include mediaquery-md() {
+      content: "md (tablet)";
+      background: #38B63D;
+    }
+    @include mediaquery-lg() {
+      content: "lg (desktop)";
+      background: #00C0C0;
+    }
+  }
+
+}
+
+// Execute
+// ---------------------------------------------------
+
+[id="guide"]:target {
+  @include responsive-guide();
+}

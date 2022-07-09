@@ -1,0 +1,57 @@
+@mixin text-hide($bgimg: image-url('default.jpg')) {
+	text-indent: -119988px;
+	overflow: hidden;
+	text-align: left;
+	text-transform: capitalize;
+	background-image: $bgimg;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: inherit;
+}
+
+$bd-position: (
+	'left': 7.5px 13px 7.5px 0,
+	'right': 7.5px 0 7.5px 13px,
+	'top': 0 7.5px 13px 7.5px,
+	'bottom': 13px 7.5px 0 7.5px,
+) !default;
+
+@mixin bd-arrow($position: left, $color: #999) {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: map-get($bd-position, $position);
+	@if $position == left {
+		border-color: transparent $color transparent transparent;
+	}
+	@else if $position == right {
+		border-color: transparent transparent transparent $color;
+	}
+	@else if $position == top {
+		border-color: transparent transparent $color transparent;
+	}
+	@else if $position == bottom {
+		border-color: $color transparent transparent transparent;
+	}
+}
+
+// sp: ~600px, tb: 600px~, lt: 768px~, pc: 1200px~
+$breakpoints: (
+	'sp': 'screen and (max-width: 37.5em)',
+	'sp-tb': 'screen and (max-width: 48em)',
+	'tb': 'screen and (min-width: 37.5em)',
+	'tb-lt': 'screen and (min-width: 37.5em) and (max-width: 48em)',
+	'tb-pc': 'screen and (min-width: 37.5em) and (max-width: 75em)',
+	'lt': 'screen and (min-width: 48em)',
+	'lt-pc': 'screen and (min-width: 48em) and (max-width: 75em)',
+	'pc': 'screen and (min-width: 75em)',
+) !default;
+
+@mixin mq($breakpoint: sp) {
+	@media #{map-get($breakpoints, $breakpoint)} {
+		@content;
+	}
+}

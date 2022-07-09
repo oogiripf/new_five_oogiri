@@ -1,0 +1,44 @@
+Bokegram version 3.1.4
+Created 10/23/2015
+Copyright 2011-2015 ヤマモト
+Available at http://bokegram.web.fc2.com/
+
+This software is released under the MIT License, see LICENSE.txt.
+
+# 利用規定
+
+本ソフトウェアはMITライセンスのもとで公開されています。
+ご自由に複製・配布・修正含めご利用ください。
+本ソフトウェアを利用した事によるいかなる損害も、作者は一切の責任を負いません。
+詳しくは同梱のLICENSE.txtをお読みください。
+
+
+# 設置方法
+
+1. PHPとMySQLが使用できるサーバを用意。
+
+2. MySQLでデータベースとそれを使用できるユーザを用意。
+
+3. 同梱のconfigフォルダにあるconfig.phpをテキストエディタなどで開き、
+   任意のデータIDと各パスワードを入力し、UTF-8の文字コードのまま上書き保存。
+
+4. 「お読みください.txt」以外のファイル・フォルダを、サーバーにFTPソフト等を用いてアップロード。※
+
+5. .htaccessが使用可能なサーバーの場合、configフォルダにあるhtaccess.txtのファイル名を
+   「htaccess.txt」から「.htaccess」に変更するとより安全です。
+
+※　WindowsならFFFTP、MacならCyberduckなど。サーバーが用意したアップロードサービス等でも可。
+
+※　詳しくはこちらの説明をご覧ください。（http://bokegram.web.fc2.com/support/startup.html）
+
+# 使用方法
+
+1. index.phpにアクセスし、右上の「管理」からconfig.phpで設定したパスワードを入力すると管理ページにログインできます。
+
+2. 管理ページから「新しいお題の作成」を選択してお題を投稿しましょう。
+
+
+# 使用にあたっての注意
+
+・v3.0.0からMySQLの使用になったため、Bokegramの以前のバージョン（ver2.*）のデータとの互換性はありません。
+・about.phpの内容は見える形で残してください。

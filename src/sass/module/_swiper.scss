@@ -1,0 +1,111 @@
+/* Google Fonts読み込み */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap");
+
+/* 簡易リセットCSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* スライダー全体 */
+.vertical-slider {
+    width: 100%;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+}
+
+#q {
+    width: 100%;
+    height: 100%;
+}
+
+/* スライド */
+.vertical-slider__slide {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10rem;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+    color: #333;
+}
+
+/* 1枚目のスライド */
+.vertical-slider__slide:nth-child(1) {
+    background-color: transparent;
+}
+
+/* 2枚目のスライド */
+.vertical-slider__slide:nth-child(2) {
+    background-color: transparent;
+}
+
+/* 3枚目のスライド */
+.vertical-slider__slide:nth-child(3) {
+    background-color: transparent;
+}
+
+/* 4枚目のスライド */
+.vertical-slider__slide:nth-child(4) {
+    background-color: transparent;
+}
+
+/* 5枚目のスライド */
+.vertical-slider__slide:nth-child(5) {
+    background-color: transparent;
+}
+
+.swiper-wrapper {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: calc(100% - $scroll-width);
+    height: calc(100% - $header-height);
+}
+
+.swiper-slide {
+    position: relative;
+}
+
+.swiper-slide.vertical-slider__slide.swiper-slide-active {
+    height: 100% !important;
+}
+
+.swiper-pagination {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - $header-height);
+}
+
+.swiper-pagination-bullet {
+    flex: 1;
+    background: #333;
+    border-radius: 0;
+}
+
+.swiper-pagination-vertical.swiper-pagination-bullets,
+.swiper-vertical > .swiper-pagination-bullets {
+    right: 0;
+    top: $header-height;
+    transform: translate(0);
+}
+
+.swiper-pagination-vertical.swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-vertical > .swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: var(--swiper-pagination-bullet-vertical-gap, 0px) 0;
+    padding: 20px;
+}
+
+/* SP時の文字サイズ調整 */
+@media (max-width: 599px) {
+    .vertical-slider__slide {
+        font-size: 16vw;
+    }
+}
